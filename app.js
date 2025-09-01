@@ -476,3 +476,4 @@ function renderAll() {
   renderAppointments();
   if (isAdmin) renderEarnings();
 }
+
