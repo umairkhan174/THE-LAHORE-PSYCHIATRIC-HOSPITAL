@@ -1,0 +1,102 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-image: url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #333;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1, h2 {
+  margin: 0 0 1rem 0;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+#patientTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: white;
+}
+
+#patientTable th, #patientTable td {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+button#logoutBtn {
+  background-color: #dc3545;
+  margin-left: auto;
+}
+
+button#logoutBtn:hover {
+  background-color: #c82333;
+}
+
+button#viewRecordsBtn, button#exportBtn, button#closeRecordsBtn {
+  background-color: #007bff;
+  margin-left: 1rem;
+}
+
+button#viewRecordsBtn:hover, button#exportBtn:hover, button#closeRecordsBtn:hover {
+  background-color: #0056b3;
+}
+
+.action-btn {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  margin-right: 0.3rem;
+  border-radius: 4px;
+}
+
+.action-btn.delete-btn {
+  background-color: #dc3545;
+}
+
+.action-btn.edit-btn {
+  background-color: #ffc107;
+  color: black;
+}
