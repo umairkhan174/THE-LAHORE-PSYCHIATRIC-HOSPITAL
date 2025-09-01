@@ -1,31 +1,23 @@
-/* GENERAL PAGE */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: url("https://i.ibb.co/p0P0LrV/hospital-bg.jpg") no-repeat center center fixed;
+  background: url("hospital-bg.jpg") no-repeat center center fixed;
   background-size: cover;
   color: #222;
 }
 
-/* MAIN TITLE */
 h1 {
   text-align: center;
   margin-top: 20px;
   color: #004080;
-  font-size: 2.2em;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
-/* SUBHEADINGS */
 h2 {
   color: #0066cc;
-  margin-bottom: 10px;
   border-bottom: 2px solid #0066cc;
   padding-bottom: 5px;
 }
 
-/* FORM SECTIONS */
 .section {
   background: rgba(255, 255, 255, 0.92);
   padding: 20px;
@@ -33,14 +25,8 @@ h2 {
   border-radius: 15px;
   max-width: 900px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease-in-out;
 }
 
-.section:hover {
-  transform: translateY(-4px);
-}
-
-/* INPUT FIELDS */
 input, select, button {
   display: block;
   width: 95%;
@@ -49,83 +35,24 @@ input, select, button {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 15px;
-  transition: 0.2s;
 }
 
-input:focus, select:focus {
-  outline: none;
-  border-color: #0066cc;
-  box-shadow: 0 0 8px rgba(0,102,204,0.4);
-}
-
-/* BUTTONS */
 button {
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s ease-in-out, transform 0.2s;
-}
-
-button:hover {
-  transform: scale(1.05);
-}
-
-button[type="submit"], #registerBtn {
-  background: #28a745;
-  color: white;
-}
-
-button[type="submit"]:hover {
-  background: #218838;
 }
 
 .logout {
   float: right;
-  margin-right: 20px;
+  margin: 10px 20px 0 0;
   background: #dc3545;
   color: white;
-  padding: 8px 15px;
-  border-radius: 8px;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  width: auto;
 }
 
-.logout:hover {
-  background: #b52b38;
-}
-
-/* ACTION BUTTONS */
-#viewPatientsBtn, #viewDoctorsBtn, #viewAppointmentsBtn {
-  background: #0066cc;
-  color: white;
-}
-
-#exportPatientsBtn, #exportDoctorsBtn, #exportAppointmentsBtn {
-  background: #17a2b8;
-  color: white;
-}
-
-#closePatientsBtn, #closeDoctorsBtn, #closeAppointmentsBtn, #closeEarningsBtn {
-  background: #6c757d;
-  color: white;
-}
-
-.deleteBtn {
-  background: #dc3545;
-  color: white;
-}
-
-.deleteBtn:hover {
-  background: #b52b38;
-}
-
-.editBtn {
-  background: #ffc107;
-  color: black;
-}
-
-.editBtn:hover {
-  background: #e0a800;
-}
-
-/* TABLES */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -147,25 +74,10 @@ table td {
   border-bottom: 1px solid #ddd;
 }
 
-table tr:hover {
-  background: #f1f7ff;
-}
-
-/* SEARCH INPUTS */
-#searchPatientInput, #searchDoctorInput, #searchAppointmentInput {
-  margin: 10px 0;
-  width: 50%;
-  padding: 8px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-/* PRINT PREVIEW */
 #printPreview {
   padding: 40px;
   background: white;
   font-size: 14px;
-  line-height: 1.6;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
@@ -173,24 +85,15 @@ table tr:hover {
 
 #printPreview::before {
   content: "";
-  background: url("https://i.ibb.co/c1vC6zM/hospital-logo.png") center center no-repeat;
+  background: url("hospital-logo.png") center center no-repeat;
   background-size: 300px;
   opacity: 0.08;
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
 }
 
-/* PRINT MODE */
 @media print {
   body * { visibility: hidden; }
-  #printPreview, #printPreview * {
-    visibility: visible;
-  }
-  #printPreview {
-    position: absolute;
-    left: 0; top: 0;
-    width: 100%;
-    box-shadow: none;
-    border-radius: 0;
-  }
+  #printPreview, #printPreview * { visibility: visible; }
+  #printPreview { position: absolute; left: 0; top: 0; width: 100%; }
 }
