@@ -1,99 +1,112 @@
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: url("hospital-bg.jpg") no-repeat center center fixed;
-  background-size: cover;
-  color: #222;
+/* ——— Base ——— */
+:root{
+  --bg: #f4f6fb;
+  --primary:#0d6efd;
+  --primary-2:#0b5ed7;
+  --success:#198754;
+  --danger:#dc3545;
+  --muted:#6c757d;
+  --ink:#1f2a44;
+  --card: rgba(255,255,255,0.94);
+  --shadow: 0 8px 24px rgba(0,0,0,.18);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:url("hospital-bg.jpg") center/cover fixed no-repeat;
 }
 
-h1 {
-  text-align: center;
-  margin-top: 20px;
-  color: #004080;
+/* ——— Layout ——— */
+.center{max-width:960px;margin:6rem auto;padding:2rem}
+.card{
+  background:var(--card);
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  padding:1.25rem;
+  margin:1rem auto;
 }
+.grid{display:grid;gap:.75rem}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid.two > *{min-width:0}
+.row{display:flex;gap:.5rem;align-items:center}
+.row.space{justify-content:space-between}
+.search{padding:.6rem .8rem;border:1px solid #d7dbe7;border-radius:10px;min-width:240px}
 
-h2 {
-  color: #0066cc;
-  border-bottom: 2px solid #0066cc;
-  padding-bottom: 5px;
+/* ——— Headings ——— */
+h1{margin:.2rem 0 1rem 0;text-align:center;color:#113c8d}
+h2{margin:.2rem 0 1rem 0;border-left:4px solid var(--primary);padding-left:.5rem}
+
+/* ——— Buttons ——— */
+.btn{
+  padding:.6rem 1rem;border-radius:10px;border:0;background:#e9eefb;cursor:pointer;
+  font-weight:600;transition:.2s;
 }
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.primary:hover{background:var(--primary-2)}
+.btn.success{background:var(--success);color:#fff}
+.btn.success.ghost{background:transparent;border:2px solid var(--success);color:var(--success)}
+.btn.danger{background:var(--danger);color:#fff}
+.btn.small{padding:.45rem .8rem;border-radius:8px}
+.btn.ghost{background:transparent;border:2px solid var(--primary);color:var(--primary)}
+.filebtn{position:relative;overflow:hidden}
+.filebtn input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.filelabel{display:flex;align-items:center;gap:.5rem;color:#334}
 
-.section {
-  background: rgba(255, 255, 255, 0.92);
-  padding: 20px;
-  margin: 20px auto;
-  border-radius: 15px;
-  max-width: 900px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+/* ——— Inputs ——— */
+input,select{
+  padding:.65rem .8rem;border:1px solid #d7dbe7;border-radius:10px;width:100%;
+  background:#fff;outline:none;
 }
+input:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(13,110,253,.15)}
 
-input, select, button {
-  display: block;
-  width: 95%;
-  padding: 10px;
-  margin: 8px auto;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 15px;
+/* ——— Top Navigation ——— */
+.topnav{
+  position:sticky;top:0;z-index:10;
+  background:linear-gradient(90deg,#0d6efd,#5c8dfb);
+  color:#fff;display:flex;justify-content:space-between;align-items:center;
+  padding:.6rem 1rem;box-shadow:0 6px 20px rgba(0,0,0,.15);
 }
-
-button {
-  cursor: pointer;
-  font-weight: bold;
+.topnav .brand{font-weight:800;letter-spacing:.3px}
+.tabs{display:flex;gap:.5rem;align-items:center}
+.tab{
+  background:rgba(255,255,255,.15);color:#fff;border:0;border-radius:999px;padding:.5rem .9rem;cursor:pointer;
+  font-weight:700;letter-spacing:.2px;transition:.2s;
 }
+.tab:hover{background:rgba(255,255,255,.25)}
+.tab.active{background:#fff;color:#0d3b8d}
+#logoutBtn{margin-left:.5rem}
 
-.logout {
-  float: right;
-  margin: 10px 20px 0 0;
-  background: #dc3545;
-  color: white;
-  padding: 8px 18px;
-  border-radius: 6px;
-  font-size: 14px;
-  width: auto;
+/* ——— Tab Pages ——— */
+.tabpage{display:none;padding:1rem}
+.tabpage.show{display:block}
+
+/* ——— Tables ——— */
+.tablewrap{overflow:auto;border-radius:12px;border:1px solid #e2e6f3;background:#fff}
+table{border-collapse:collapse;width:100%}
+thead th{
+  background:#0d3b8d;color:#fff;text-align:left;padding:.7rem;border-bottom:2px solid #e2e6f3
 }
+tbody td{padding:.6rem;border-bottom:1px solid #eef2ff}
+tbody tr:hover{background:#f5f7ff}
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
+/* ——— Print Preview ——— */
+.print-card{
+  background:#fff url("hospital-logo.png") center/300px no-repeat;
+  border:1px solid #e8e8e8;border-radius:14px;box-shadow:var(--shadow);
+  padding:2rem;max-width:800px;margin:1rem auto;color:#111
 }
+.print-card h3{margin-top:0;color:#0d3b8d}
+.print-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.print-row{display:flex;justify-content:space-between;border-bottom:1px dashed #ddd;padding:.25rem 0}
 
-table th {
-  background: #004080;
-  color: white;
-  padding: 12px;
-}
-
-table td {
-  padding: 10px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-}
-
-#printPreview {
-  padding: 40px;
-  background: white;
-  font-size: 14px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  position: relative;
-}
-
-#printPreview::before {
-  content: "";
-  background: url("hospital-logo.png") center center no-repeat;
-  background-size: 300px;
-  opacity: 0.08;
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-}
-
-@media print {
-  body * { visibility: hidden; }
-  #printPreview, #printPreview * { visibility: visible; }
-  #printPreview { position: absolute; left: 0; top: 0; width: 100%; }
+/* ——— Print media ——— */
+@media print{
+  body{background:#fff}
+  body * {visibility:hidden}
+  #printPreview, #printPreview * {visibility:visible}
+  #printPreview{position:absolute;inset:0;margin:0;box-shadow:none;border:0}
 }
